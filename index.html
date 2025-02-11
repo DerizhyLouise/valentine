@@ -12,14 +12,28 @@
 </head>
 
 <body class="bg-yellow flex justify-center items-center w-screen h-screen text-navy overflow-hidden">
-    <!-- Floating Hearts & Balloons -->
+    <audio id="loveSong" src="song.mp3" loop></audio>
+
     <div class="floating-hearts"></div>
-    <div class="floating-balloons"></div>
+    <div class="flower-rain"></div>
 
-    <!-- Love Song -->
-    <audio id="loveSong" src="love-song.mp3" loop></audio>
+    <button id="loveLetter" onclick="loveLetter()"
+        class="hidden fixed bottom-[-200px] left-1/2 transform -translate-x-1/2 w-64 p-6 bg-pink text-white text-center rounded-lg shadow-lg">
+        💌 A special message just for you... 💌
+    </button>
+    <div id="loveLetter2"
+        class="hidden fixed bottom-[-200px] left-1/2 transform -translate-x-1/2 w-64 p-6 bg-pink text-white text-center rounded-lg shadow-lg z-2">
+        I love you and can't stop thinking about you 🥰
+    </div>
 
-    <div>
+    <div id="quizContainer" class="text-center mt-6">
+        <p id="quizTimer" class="text-lg font-bold text-red-600 mt-2"></p>
+        <p id="quizQuestion" class="text-xl font-semibold text-pink"></p>
+        <div id="quizOptions" class="flex justify-center gap-4 mt-4"></div>
+        <p id="quizMessage" class="text-lg font-semibold text-red-600 mt-2 hidden"></p>
+    </div>
+
+    <div id="willBeMyValentine">
         <div class="font-semibold text-5xl text-center gradient-text">
             Will You Be My Valentine? 💕
         </div>
@@ -37,6 +51,12 @@
         <p id="loveCounter" class="text-center text-lg font-semibold mt-2 text-navy">
             Love Count: <span id="loveCount">0</span> ❤️
         </p>
+        <div id="giftBox" class="hidden flex justify-center mt-6">
+            <button onclick="openGift()" class="btn bg-yellow-500 text-white text-2xl">
+                🎁 Open Gift!
+            </button>
+        </div>
+        <p id="giftMessage" class="text-center text-lg font-semibold mt-2 text-pink hidden"></p>
     </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
